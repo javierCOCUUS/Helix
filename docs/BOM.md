@@ -4,8 +4,8 @@
 | Item | Qty | Recommended Model | Specs / Notes | Status |
 |---|---:|---|---|---|
 | Main controller | 1 | BTT Manta M8P V2.0 | 24V logic power, onboard driver slots, CB1/CM4 compatible | Selected |
-| Compute module | 1 | BTT CB1 (or Raspberry Pi CM4) | Runs Klipper host + Moonraker + Mainsail/Fluidd | Pending final |
-| Storage | 1 | eMMC / microSD | OS + config backup strategy | Pending |
+| Compute module (default) | 1 | Raspberry Pi CM4 (4GB RAM, 16GB eMMC, non-Lite) | Runs Klipper host + Moonraker + Mainsail/Fluidd on Linux | Selected |
+| Optional compute upgrade | 1 | Raspberry Pi CM4 (8GB RAM, 32GB eMMC) | Use only if planning heavy local workloads (video recording/vision) | Optional |`r`n| Optional external host | 1 | Fanless mini PC (Intel N100 class) | Alternative to CM4 for easier field service and remote tooling | Optional |`r`n| Storage baseline | 1 | On-module eMMC | Keep config backups and recovery image external | Selected |
 
 ## 2) Motion Drivers and Motors
 | Item | Qty | Recommended Model | Specs / Notes | Status |
@@ -84,3 +84,4 @@
 5. Validate servo valve macros with dry runs.
 6. Add flow sensor feedback and safety interlocks.
 7. Validate VPN remote access and camera stream before production.
+
