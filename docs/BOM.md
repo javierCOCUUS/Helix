@@ -33,7 +33,17 @@
 | Alginato valve | 1 | Servo-actuated pinch/needle valve | Opens during one material stream for co-deposition | Selected concept |
 | Valve servo | 1 | 24V->5V powered hobby/industrial servo | Controlled by Klipper `[servo]` output | Pending model |
 
-## 5) Machine Safety and I/O
+## 5) Networking, Remote Access, and Camera
+| Item | Qty | Recommended Model | Specs / Notes | Status |
+|---|---:|---|---|---|
+| Industrial router/firewall | 1 | DIN-rail industrial router | VPN-capable secure remote access | Required |
+| Managed switch (optional) | 1 | Industrial managed switch | VLAN separation for machine network | Recommended |
+| Ethernet cabling | Lot | Cat6 industrial cable | Prefer wired host link over Wi-Fi | Required |
+| VPN endpoint | 1 | WireGuard/OpenVPN capable | Encrypted remote maintenance channel | Required |
+| Process camera | 1 to 2 | USB/UVC or IP camera | Live monitoring in Mainsail/Fluidd | Required |
+| Camera mount and lighting | 1 set | Adjustable mount + LED light | Stable framing of nozzle/part zone | Recommended |
+
+## 6) Machine Safety and I/O
 | Item | Qty | Recommended Model | Specs / Notes | Status |
 |---|---:|---|---|---|
 | Endstops | 3 to 6 | Mechanical/inductive | X/Y/Z limits and homing strategy | Pending final |
@@ -42,7 +52,7 @@
 | Wire and ferrules | Lot | Industrial grade | Ferrules mandatory for screw terminals | Required |
 | Grounding kit | Lot | PE star grounding hardware | Chassis + PSU + shields grounding plan | Required |
 
-## 6) Wiring Notes (Critical)
+## 7) Wiring Notes (Critical)
 - Tie DC negative of PSU A (24V V-) and PSU B (60V V-) to a common ground reference.
 - DM860T logic side:
   - PUL+, DIR+, ENA+ -> +5V logic reference
@@ -52,23 +62,25 @@
 - E-Stop should de-energize machine power path, not only send firmware signal.
 - Servo power should come from a dedicated 5V rail (not directly from MCU signal pin).
 
-## 7) IO-Link Compatibility Note
+## 8) IO-Link Compatibility Note
 - Klipper does not natively speak IO-Link.
 - IO-Link devices can still be used through an IO-Link master plus a bridge layer (PLC, MQTT/HTTP service, or digital/analog conversion).
 - For first machine bring-up, use direct electrical sensors (pulse/analog) before adding IO-Link abstraction.
 
-## 8) Procurement Fields to Complete
+## 9) Procurement Fields to Complete
 - Final voltage/current for PSU A and PSU B
 - Exact NEMA frame, current, and holding torque (all motors)
 - Screw pitch and gearbox ratio for each feeder
 - Flow sensor interface type (pulse, 0-10V, 4-20mA, IO-Link)
 - Valve type and servo torque requirement
+- Router model, VPN policy, and camera model
 - Connector families (aviation, JST, Molex, terminal blocks)
 
-## 9) Bring-up Sequence
+## 10) Bring-up Sequence
 1. Bench test Manta + compute only at 24V.
 2. Validate X/Y/Z drivers and motion limits without material feed.
 3. Wire DM860T logic first, then high-voltage supply.
 4. Tune both feeder directions and enable polarity.
 5. Validate servo valve macros with dry runs.
 6. Add flow sensor feedback and safety interlocks.
+7. Validate VPN remote access and camera stream before production.

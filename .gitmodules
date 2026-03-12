@@ -1,0 +1,6 @@
+[submodule "external/manta-m8p"]
+	path = external/manta-m8p
+	url = https://github.com/bigtreetech/Manta-M8P
+[submodule "external/klipper"]
+	path = external/klipper
+	url = https://github.com/Klipper3d/klipper

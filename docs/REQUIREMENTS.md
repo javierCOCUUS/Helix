@@ -1,4 +1,4 @@
-# Helix - System Requirements (v0.2)
+# Helix - System Requirements (v0.3)
 
 ## Source and Traceability
 Primary source: `Quotation_Helix_Printer.pdf` (dated content references year 2025).
@@ -46,6 +46,14 @@ Helix is a dual-nozzle industrial 3D printing platform for food/meat-analogue st
   Added by engineering for operability.
 - `SR-005` Software deliverables shall include installation instructions for both Windows 10 and Windows 11 operator stations.
   Added by engineering for deployment quality.
+- `SR-006` The machine shall support internet connectivity for remote diagnostics, updates, and supervised operation.
+  Added by customer request on 2026-03-12.
+- `SR-007` Remote access shall use secure authentication and encrypted transport (VPN or equivalent secure tunnel).
+  Added by engineering security baseline.
+- `SR-008` The system shall support remote software/config updates with a documented rollback procedure.
+  Added by engineering operations baseline.
+- `SR-009` The system shall include at least one process camera integrated into the operator UI.
+  Added by customer request on 2026-03-12.
 
 ## 6) Compliance Requirements
 The machine and electrical system shall conform to the cited directives/norms:
@@ -71,5 +79,6 @@ Source: quotation page 3.
 - Any environmental limits (temperature, humidity, IP rating).
 
 ## 9) Change Log
+- `2026-03-12` v0.3: Added internet connectivity, secure remote access, remote update capability, and camera integration requirements.
 - `2026-03-12` v0.2: Added Windows 10/11 client requirements and explicit Linux Klipper host requirement.
 - `2026-03-12` v0.1: Initial requirements baselined from quotation + customer OS request.

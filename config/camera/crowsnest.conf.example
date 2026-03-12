@@ -1,0 +1,23 @@
+# Example crowsnest config for Helix
+# Path on host is typically: ~/printer_data/config/crowsnest.conf
+
+[crowsnest]
+log_path: ~/printer_data/logs/crowsnest.log
+log_level: verbose
+
+[cam helix_main]
+mode: camera-streamer
+enable_rtsp: false
+enable_webrtc: false
+port: 8080
+device: /dev/video0
+resolution: 1280x720
+max_fps: 20
+
+#[cam helix_nozzle_closeup]
+#mode: camera-streamer
+#enable_rtsp: false
+#port: 8081
+#device: /dev/video1
+#resolution: 1280x720
+#max_fps: 20
