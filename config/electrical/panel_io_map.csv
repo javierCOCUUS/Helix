@@ -1,0 +1,15 @@
+Tag,Type,Contact/Signal,Panel Function,Default State,Connected To,Notes
+S0,E-STOP,NC dual-channel,Emergency stop,Latching,SR1 CH_A/CH_B,Safety critical hardwired
+S1,Pushbutton,NC,Controlled stop,Closed,DI_STOP,Software stop request
+S2,Pushbutton,NO,Safety reset,Open,SR1 RESET,Manual reset after safety event
+S3,Pushbutton,NO,Start cycle,Open,DI_START,Start print/process macro
+S4,Pushbutton,NO,Pause/Hold,Open,DI_PAUSE,Pause process gracefully
+SA1,Key selector,2-position,Local/Remote mode,Local,DI_MODE_SELECT,Blocks remote start when local
+SA2,Key selector,2-position,Maintenance enable,Off,DI_MAINTENANCE,Optional service mode
+H1,Pilot light,24V,Main power on,Off,DO_H1,White
+H2,Pilot light,24V,Control power healthy,Off,DO_H2,Green
+H3,Pilot light,24V,Safety chain fault/open,Off,DO_H3,Red
+H4,Pilot light,24V,Remote session active,Off,DO_H4,Blue
+H5,Pilot light,24V,Warning/alarm,Off,DO_H5,Amber
+DI_ESTOP_STATUS,Digital input,24V,Mirror of safety relay status,Low,Manta DI,Diagnostics only
+DI_DOOR_STATUS,Digital input,24V,Door/interlock status,Low,Manta DI,Diagnostics only

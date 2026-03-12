@@ -1,0 +1,28 @@
+# Helix panel inputs example for Klipper
+# IMPORTANT: E-Stop must stay hardwired in safety relay/contactor path.
+# This file is only for non-safety software commands and diagnostics.
+
+#[gcode_button stop_button]
+#pin: ^<DI_STOP_PIN>
+#press_gcode:
+#  PAUSE
+
+#[gcode_button start_button]
+#pin: ^<DI_START_PIN>
+#press_gcode:
+#  RESUME
+
+#[gcode_button pause_button]
+#pin: ^<DI_PAUSE_PIN>
+#press_gcode:
+#  PAUSE
+
+#[gcode_button mode_selector]
+#pin: ^<DI_MODE_SELECT_PIN>
+#press_gcode:
+#  RESPOND PREFIX="mode" MSG="Mode selector changed"
+
+#[gcode_button estop_status]
+#pin: ^<DI_ESTOP_STATUS_PIN>
+#press_gcode:
+#  RESPOND PREFIX="safety" MSG="E-Stop status changed"

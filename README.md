@@ -7,9 +7,12 @@ Starter repository for the Helix industrial dual-extrusion platform.
 - BOM: `docs/BOM.md`
 - Flow/IO-Link integration notes: `docs/FLOW_AND_IOLINK.md`
 - Remote connectivity and camera architecture: `docs/REMOTE_CONNECTIVITY_AND_CAMERA.md`
+- Electrical panel and safety concept: `docs/ELECTRICAL_PANEL_AND_SAFETY.md`
 - Klipper version and firmware repo strategy: `docs/KLIPPER_VERSION_AND_REPO.md`
 - Klipper base config: `config/klipper/printer.cfg`
+- Klipper panel input example: `config/klipper/panel_inputs.cfg.example`
 - Camera config example: `config/camera/crowsnest.conf.example`
+- Panel IO mapping: `config/electrical/panel_io_map.csv`
 
 ## Linked upstream firmware repos (submodules)
 - `external/manta-m8p` -> `https://github.com/bigtreetech/Manta-M8P`
@@ -31,6 +34,7 @@ Starter repository for the Helix industrial dual-extrusion platform.
 1. Complete final part numbers in `docs/BOM.md`.
 2. Replace placeholders in `config/klipper/printer.cfg` with real pins and values.
 3. Configure camera service from `config/camera/crowsnest.conf.example`.
-4. Test valve macros and feeder direction with dry runs.
-5. Add flow sensor validation and safety interlocks.
-6. Pin a validated Klipper commit hash after commissioning.
+4. Wire panel buttons and map signals from `config/electrical/panel_io_map.csv`.
+5. Integrate non-safety panel inputs using `config/klipper/panel_inputs.cfg.example`.
+6. Test safety chain and button behavior with dry runs.
+7. Pin a validated Klipper commit hash after commissioning.
