@@ -9,9 +9,11 @@ Starter repository for the Helix industrial dual-extrusion platform.
 - Remote connectivity and camera architecture: `docs/REMOTE_CONNECTIVITY_AND_CAMERA.md`
 - Electrical panel and safety concept: `docs/ELECTRICAL_PANEL_AND_SAFETY.md`
 - Klipper version and firmware repo strategy: `docs/KLIPPER_VERSION_AND_REPO.md`
+- Software installation guide: `docs/SOFTWARE_INSTALL.md`
 - Klipper base config: `config/klipper/printer.cfg`
 - Klipper panel input example: `config/klipper/panel_inputs.cfg.example`
-- Camera config example: `config/camera/crowsnest.conf.example`\n- OrcaSlicer future templates: `config/slicer/orcaslicer/`
+- Camera config example: `config/camera/crowsnest.conf.example`
+- OrcaSlicer future templates: `config/slicer/orcaslicer/`
 - Panel IO mapping: `config/electrical/panel_io_map.csv`
 - Commissioning checklist: `docs/COMMISSIONING_CHECKLIST.md`
 - Procurement shortlist (public, no prices): `docs/PROCUREMENT_COMPONENT_SHORTLIST.md`
@@ -40,4 +42,3 @@ Starter repository for the Helix industrial dual-extrusion platform.
 5. Integrate non-safety panel inputs using `config/klipper/panel_inputs.cfg.example`.
 6. Test safety chain and button behavior with dry runs.
 7. Pin a validated Klipper commit hash after commissioning.
-
