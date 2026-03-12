@@ -17,3 +17,6 @@ env/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Local private docs (never commit)
+.private/

@@ -13,6 +13,8 @@ Starter repository for the Helix industrial dual-extrusion platform.
 - Klipper panel input example: `config/klipper/panel_inputs.cfg.example`
 - Camera config example: `config/camera/crowsnest.conf.example`
 - Panel IO mapping: `config/electrical/panel_io_map.csv`
+- Commissioning checklist: `docs/COMMISSIONING_CHECKLIST.md`
+- Procurement shortlist (public, no prices): `docs/PROCUREMENT_COMPONENT_SHORTLIST.md`
 
 ## Linked upstream firmware repos (submodules)
 - `external/manta-m8p` -> `https://github.com/bigtreetech/Manta-M8P`
