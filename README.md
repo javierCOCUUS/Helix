@@ -25,8 +25,6 @@ Starter repository for the Helix industrial dual-extrusion platform.
 ## Process focus
 - Ambient-temperature dual-mass extrusion (no heated bed, no thermal extrusion loop).
 - Optional flow sensor feedback.
-- Optional IO-Link integration through an external bridge.
-- Servo-controlled alginate valve for synchronized co-deposition.
 
 ## Platform requirements
 - Operator workstation compatibility: Windows 10 and Windows 11.
