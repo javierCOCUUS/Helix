@@ -36,15 +36,7 @@ Detailed cost and vendor-price comparisons are stored in a local private file:
   - https://www.robotshop.com/products/nema-23-bipolar-425ozin-42a-57x57x114mm-4-wires-stepper-motor
   - https://www.omc-stepperonline.com/s-series-4-axis-cnc-router-kit-3-0nm-425oz-in-nema-23-stepper-motor-driver-4-dm542t-s30
 
-## 5) Aluminum Profiles (Estimate Basis)
-- Estimated cut-list total:
-  - 4040: 18.2 m
-  - 4080: 3.4 m
-  - 2020: 4.0 m
-- Public references:
-  - https://www.motedis.es/en/Slot-profiles
-  - https://us.openbuilds.com/c-beam-linear-rail/
 
-## 6) Policy
+## 5) Policy
 - Public repo: components/spec references only.
 - Private local docs: pricing, supplier ranking, negotiation notes, and purchase strategy.
