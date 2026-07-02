@@ -4,8 +4,7 @@
 | Item | Qty | Recommended Model | Specs / Notes | Status |
 |---|---:|---|---|---|
 | Main controller | 1 | BTT Manta M8P V2.0 | 24V logic power, onboard driver slots, CB1/CM4 compatible | Selected |
-| Compute module (default) | 1 | Raspberry Pi CM4 (4GB RAM, 16GB eMMC, non-Lite) | Runs Klipper host + Moonraker + Mainsail/Fluidd on Linux | Selected |
-| Optional compute upgrade | 1 | Raspberry Pi CM4 (8GB RAM, 32GB eMMC) | Use only if planning heavy local workloads (video recording/vision) | Optional |`r`n| Optional external host | 1 | Fanless mini PC (Intel N100 class) | Alternative to CM4 for easier field service and remote tooling | Optional |`r`n| Storage baseline | 1 | On-module eMMC | Keep config backups and recovery image external | Selected |
+| Compute module (default) | 1 | mini PC ryzen 7
 
 ## 2) Motion Drivers and Motors
 | Item | Qty | Recommended Model | Specs / Notes | Status |
@@ -28,18 +27,13 @@
 | Item | Qty | Recommended Model | Specs / Notes | Status |
 |---|---:|---|---|---|
 | Cold extrusion heads | 2 | Progressive cavity / screw nozzle assembly | Ambient-temperature deposition of two masses | Pending model |
-| Back-pressure sensors (optional) | 2 | 0-10V or 4-20mA pressure transducer | Protects against clogging and over-pressure | Recommended |
-| Flow sensor (optional) | 1 to 2 | Pulse or analog inline flow sensor | Real material-flow feedback for one or both lines | Recommended |
-| Alginato valve | 1 | Servo-actuated pinch/needle valve | Opens during one material stream for co-deposition | Selected concept |
 | Valve servo | 1 | 24V->5V powered hobby/industrial servo | Controlled by Klipper `[servo]` output | Pending model |
 
 ## 5) Networking, Remote Access, and Camera
 | Item | Qty | Recommended Model | Specs / Notes | Status |
 |---|---:|---|---|---|
-| Industrial router/firewall | 1 | DIN-rail industrial router | VPN-capable secure remote access | Required |
-| Managed switch (optional) | 1 | Industrial managed switch | VLAN separation for machine network | Recommended |
 | Ethernet cabling | Lot | Cat6 industrial cable | Prefer wired host link over Wi-Fi | Required |
-| VPN endpoint | 1 | WireGuard/OpenVPN capable | Encrypted remote maintenance channel | Required |
+| VPN endpoint | 1 | Tailscale | Encrypted remote maintenance channel | Required |
 | Process camera | 1 to 2 | USB/UVC or IP camera | Live monitoring in Mainsail/Fluidd | Required |
 | Camera mount and lighting | 1 set | Adjustable mount + LED light | Stable framing of nozzle/part zone | Recommended |
 
@@ -47,8 +41,6 @@
 | Item | Qty | Recommended Model | Specs / Notes | Status |
 |---|---:|---|---|---|
 | Endstops | 3 to 6 | Mechanical/inductive | X/Y/Z limits and homing strategy | Pending final |
-| IO-Link master (optional) | 1 | Ethernet IO-Link master | Needed only if using IO-Link sensors/actuators | Optional |
-| PLC / protocol bridge (optional) | 1 | Small PLC or IPC | Bridges IO-Link data to Klipper-friendly I/O/macros | Optional |
 | Wire and ferrules | Lot | Industrial grade | Ferrules mandatory for screw terminals | Required |
 | Grounding kit | Lot | PE star grounding hardware | Chassis + PSU + shields grounding plan | Required |
 
@@ -62,26 +54,11 @@
 - E-Stop should de-energize machine power path, not only send firmware signal.
 - Servo power should come from a dedicated 5V rail (not directly from MCU signal pin).
 
-## 8) IO-Link Compatibility Note
-- Klipper does not natively speak IO-Link.
-- IO-Link devices can still be used through an IO-Link master plus a bridge layer (PLC, MQTT/HTTP service, or digital/analog conversion).
-- For first machine bring-up, use direct electrical sensors (pulse/analog) before adding IO-Link abstraction.
-
-## 9) Procurement Fields to Complete
-- Final voltage/current for PSU A and PSU B
-- Exact NEMA frame, current, and holding torque (all motors)
-- Screw pitch and gearbox ratio for each feeder
-- Flow sensor interface type (pulse, 0-10V, 4-20mA, IO-Link)
-- Valve type and servo torque requirement
-- Router model, VPN policy, and camera model
-- Connector families (aviation, JST, Molex, terminal blocks)
-
-## 10) Bring-up Sequence
+## 8) Bring-up Sequence
 1. Bench test Manta + compute only at 24V.
 2. Validate X/Y/Z drivers and motion limits without material feed.
 3. Wire DM860T logic first, then high-voltage supply.
 4. Tune both feeder directions and enable polarity.
-5. Validate servo valve macros with dry runs.
-6. Add flow sensor feedback and safety interlocks.
-7. Validate VPN remote access and camera stream before production.
+5. Validate  macros with dry runs.
+8. Validate VPN remote access and camera stream before production.
 
