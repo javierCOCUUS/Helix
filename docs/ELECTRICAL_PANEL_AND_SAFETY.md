@@ -47,7 +47,7 @@ This chain should not depend on software to remove hazardous motion power.
 3x400VAC -> QS1 -> QF_MAIN -> SR1/KM1 safety-controlled bus
                                  |-> QF_PS1 -> PS1 24VDC -> Manta + I/O + fans + signals
                                  |-> QF_PS2 -> PS2 60VDC -> DM860T #1/#2 power
-                                 |-> QF_AUX -> auxiliaries (lights, IPC/router, camera PSU)
+                                 |-> QF_AUX -> auxiliaries (lights, camera PSU)
 
 S0(E-STOP NC chA/chB) + door interlocks -> SR1 -> KM1 coil
 S2(RESET NO) -> SR1 reset input
