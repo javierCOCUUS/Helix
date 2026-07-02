@@ -8,15 +8,14 @@ Machine baseline: Cartesian architecture, 500x500 mm printable area, ambient-tem
 - [ ] Freeze BOM revision and purchasing list.
 - [ ] Confirm panel layout drawing and cable routing plan.
 - [ ] Confirm safety component ratings (contactor, safety relay, breakers).
-- [ ] Confirm host strategy (CB1/CM4 or industrial mini PC).
 
 ## 2) Mechanical Build
 - [ ] Assemble base frame and check diagonals (max mismatch target: <= 1.0 mm).
 - [ ] Install vertical columns and top frame; verify squareness.
 - [ ] Install XY rails and verify smooth full travel without binding.
 - [ ] Install Z structure and bed/platform support.
-- [ ] Install dual material feeders and hopper/mechanical supports.
-- [ ] Install alginate valve mechanism and servo linkage.
+- [ ] Install dual material feeders and mechanical supports.
+
 
 ## 3) Electrical Panel Build
 - [ ] Install main disconnect, branch protection, safety relay, contactor.
@@ -43,21 +42,16 @@ Reference files:
 - [ ] Jog X/Y/Z and verify axis direction.
 - [ ] Verify limits/endstops.
 - [ ] Jog feeder A/B at low speed and confirm direction.
-- [ ] Confirm ENA behavior: motors release when disabled.
-- [ ] Validate alginate valve open/close angles without mechanical stress.
 
 ## 6) Safety Functional Test (FAT)
 - [ ] E-Stop drops hazardous power immediately.
 - [ ] No automatic restart after safety reset.
-- [ ] Door/interlock event triggers expected safe state.
-- [ ] Local/Remote selector gates remote commands correctly.
 - [ ] Stop/Pause buttons trigger expected software behavior.
-- [ ] Alarm indicators (H3/H5) function as expected.
 
 ## 7) Process Validation
 - [ ] Prime feeder A and feeder B independently.
 - [ ] Measure real flow vs commanded movement and tune rotation distance.
-- [ ] Run co-deposition test (A + alginate valve).
+- [ ] Run co-deposition test (A + B).
 - [ ] Run long-duration stability test (>= 2 hours).
 - [ ] Validate clean shutdown and restart procedure.
 
